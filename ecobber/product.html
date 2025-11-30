@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Ecobber</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/product.css">
+
+    <style>
+        .search-container { text-align: center; margin: -20px auto 40px; max-width: 600px; position: relative; z-index: 10; }
+        .search-input { width: 100%; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-family: 'Outfit', sans-serif; box-shadow: 0 5px 20px rgba(0,0,0,0.05); outline: none; transition: 0.3s; }
+        .search-input:focus { border-color: #2e7d32; box-shadow: 0 5px 20px rgba(46, 125, 50, 0.2); }
+        
+        /* Universal Custom Button Style */
+        .btn-custom { 
+            display: inline-block; 
+            margin-top: 15px; 
+            padding: 10px 25px; 
+            background-color: #2e7d32; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-size: 0.9rem; 
+            transition: 0.3s;
+            border: 1px solid #2e7d32;
+            text-align: center;
+        }
+        .btn-custom:hover { background-color: #1b5e20; border-color: #1b5e20; }
+        
+        /* Secondary style for Main Products to stand out */
+        .btn-main {
+            background-color: #1b5e20; /* Darker green */
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-img">
+                    <img src="src/logo/Ecobber.png" alt="Ecobber Logo">
+                </a>
+                <div class="brand-text">Ecobber</div>
+                <div class="mobile-menu-btn">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+
+            <div class="navbar-fixed"> 
+                <ul class="nav-links">
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="product.html" class="active">Product</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="product-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Our Sustainable Product Line</h1>
+            <p class="max-w-800">Ecobber offers a diverse range of high-performance rubber products manufactured with a commitment to zero waste.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="productSearch" class="search-input" placeholder="Search products (e.g., Tiles, Sheets, Compounds)..." onkeyup="searchProducts()">
+        </div>
+    </div>
+
+    <section class="section bg-beige">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: var(--spacing-lg);">Our Main Products</h2>
+            <div class="product-grid">
+                
+                <div class="product-card" data-title="Natural Rubber Sheets">
+                    <img src="src/Ecobber/Selection (5).jpg" alt="Natural Rubber Sheets">
+                    <div class="p-content">
+                        <h3>Natural Rubber Sheets</h3>
+                        <p>Premium grade, sustainably harvested natural rubber sheets known for superior elasticity.</p>
+                        <a href="main-details.html?product=Natural Rubber Sheets" class="btn-custom btn-main">View Details & Order →</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-title="Rubber Compounds">
+                    <img src="src/Ecobber/Selection (6).jpg" alt="Rubber Compounds">
+                    <div class="p-content">
+                        <h3>Rubber Compounds</h3>
+                        <p>Custom-blended compounds optimized for specific industrial applications.</p>
+                        <a href="main-details.html?product=Rubber Compounds" class="btn-custom btn-main">View Details & Order →</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-title="Specialty Components">
+                    <img src="src/Ecobber/Selection (7).jpg" alt="Specialty Components">
+                    <div class="p-content">
+                        <h3>Specialty Components</h3>
+                        <p>Tailored solutions for complex requirements, offering exceptional resistance.</p>
+                        <a href="main-details.html?product=Specialty Components" class="btn-custom btn-main">View Details & Order →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: var(--spacing-lg);">Our Zero Waste Sub Products</h2>
+            <div class="product-grid four-col">
+                <div class="product-card small" data-title="Rubber Tiles & Mats">
+                    <img src="src/Ecobber/rubber mats/close-up-perforated-fabric.jpg" alt="Rubber Tiles">
+                    <div class="p-content">
+                        <h3>Rubber Tiles & Mats</h3>
+                        <p>High-quality, eco-friendly rubber tiles and mats.</p>
+                        <a href="customize.html?product=Tiles" class="btn-custom">Customize & Order →</a>
+                    </div>
+                </div>
+                <div class="product-card small" data-title="Rubber Crumbs">
+                    <img src="src/Ecobber/Rubber crumbs/texture-maclura-pomifera-closeup.jpg" alt="Rubber Crumbs">
+                    <div class="p-content">
+                        <h3>Rubber Crumbs</h3>
+                        <p>Sustainably processed rubber granules.</p>
+                        <a href="customize.html?product=Crumbs" class="btn-custom">Customize & Order →</a>
+                    </div>
+                </div>
+                <div class="product-card small" data-title="Reclaimed Rubber">
+                    <img src="src/Ecobber/Reclaimed rubber/Lucid_Origin_A_closeup_photograph_of_reclaimed_rubber_showcasi_3.jpg" alt="Reclaimed Rubber">
+                    <div class="p-content">
+                        <h3>Reclaimed Rubber</h3>
+                        <p>High-quality reclaimed rubber materials.</p>
+                        <a href="customize.html?product=Reclaimed" class="btn-custom">Customize & Order →</a>
+                    </div>
+                </div>
+                <div class="product-card small" data-title="Eco Fuel">
+                    <img src="src/Ecobber/Selection (11).jpg" alt="Eco Fuel">
+                    <div class="p-content">
+                        <h3>Eco Fuel</h3>
+                        <p>Specially developed eco-friendly fuel alternatives.</p>
+                        <a href="customize.html?product=Fuel" class="btn-custom">Customize & Order →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-beige">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: var(--spacing-lg);">Eco Friendly Recycled products</h2>
+            <div class="product-grid">
+                <div class="product-card" data-title="Recycled Rubber Flooring">
+                    <img src="src/Ecobber/rubber mats/Lucid_Origin_a_realistic_photograph_of_interlocking_rubber_til_2.jpg" alt="Recycled Rubber Flooring">
+                    <div class="p-content">
+                        <h3>Recycled Rubber Flooring</h3>
+                        <p>Durable and eco-friendly flooring made from 100% recycled rubber.</p>
+                        <a href="customize.html?product=Recycled Flooring" class="btn-custom">Customize & Order →</a>
+                    </div>
+                </div>
+                <div class="product-card" data-title="Rubber Granules">
+                    <img src="src/Ecobber/Rubber crumbs/Lucid_Origin_A_closeup_photograph_of_a_pile_of_rubber_crumbs_t_2.jpg" alt="Rubber Granules/Crumb">
+                    <div class="p-content">
+                        <h3>Rubber Granules/Crumb</h3>
+                        <p>Versatile recycled rubber granules and crumb.</p>
+                        <a href="customize.html?product=Granules" class="btn-custom">Customize & Order →</a>
+                    </div>
+                </div>
+                <div class="product-card" data-title="Reclaimed Rubber Compounds">
+                    <img src="src/Ecobber/Reclaimed rubber/black-pasta.jpg" alt="Reclaimed Rubber Compounds">
+                    <div class="p-content">
+                        <h3>Reclaimed Rubber Compounds</h3>
+                        <p>Innovative compounds derived from reclaimed rubber.</p>
+                        <a href="customize.html?product=Reclaimed Compounds" class="btn-custom">Customize & Order →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand-text">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;">Shaping Rubber!<br>Saving Nature!</h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="product.html">Products</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <p>Email: info@ecobber.com</p>
+                </div>
+            </div>
+            <div class="copyright text-center" style="font-size: 0.8rem; opacity: 0.7; margin-top: var(--spacing-lg);">
+                &copy; 2025 Ecobber. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        function searchProducts() {
+            let input = document.getElementById('productSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('product-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].querySelector('h3').innerText.toLowerCase();
+                let desc = cards[i].querySelector('p').innerText.toLowerCase();
+                if (title.includes(input) || desc.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

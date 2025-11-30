@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Order - Ecobber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <style>
+        /* Custom Styles for this page only */
+        .wizard-container { max-width: 900px; margin: 50px auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .step-header { display: flex; justify-content: space-between; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .step { color: #aaa; font-weight: 600; }
+        .step.active { color: #2e7d32; }
+
+        /* Step 1: Field Selection */
+        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .industry-card { border: 2px solid #eee; border-radius: 10px; padding: 25px; text-align: center; cursor: pointer; transition: 0.3s; }
+        .industry-card:hover, .industry-card.selected { border-color: #2e7d32; background: #f1f8e9; }
+        .ind-icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+
+        /* Step 2: Form */
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; font-weight: 600; margin-bottom: 8px; }
+        .color-options { display: flex; gap: 10px; }
+        .color-dot { width: 35px; height: 35px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
+        .color-dot.selected { border-color: #000; transform: scale(1.1); }
+
+        /* Step 3: Confirmation */
+        .confirm-box { text-align: center; padding: 40px; }
+        .success-icon { font-size: 4rem; margin-bottom: 20px; }
+        .order-details { background: #fafafa; padding: 20px; margin: 20px 0; text-align: left; border-radius: 8px; }
+
+        .hidden { display: none; }
+        .btn-nav { margin-top: 30px; display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body style="background-color: #f9f9f9;">
+
+    <header style="background: white;">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-img"><img src="src/logo/Ecobber.png" alt="logo"></a>
+                <div class="brand-text">Ecobber</div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="wizard-container">
+        <h2 id="product-title-display">Customizing Product</h2>
+        <div class="step-header">
+            <span class="step active" id="st1">1. Select Industry</span>
+            <span class="step" id="st2">2. Customize Specs</span>
+            <span class="step" id="st3">3. Confirmation</span>
+        </div>
+
+        <div id="step1">
+            <p>Which field will this product be used for?</p>
+            <div class="industry-grid">
+                <div class="industry-card" onclick="selectField('Footwear')">
+                    <span class="ind-icon">👟</span>
+                    <h3>Footwear</h3>
+                    <p>Soles, insoles</p>
+                </div>
+                <div class="industry-card" onclick="selectField('Automotive')">
+                    <span class="ind-icon">🚗</span>
+                    <h3>Vehicle Mechanics</h3>
+                    <p>Gaskets, mats</p>
+                </div>
+                <div class="industry-card" onclick="selectField('Construction')">
+                    <span class="ind-icon">🏗️</span>
+                    <h3>Construction</h3>
+                    <p>Flooring, insulation</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="step2" class="hidden">
+            <p>Customize details for <strong id="selected-field"></strong> application:</p>
+            
+            <div class="form-group">
+                <label class="form-label">Thickness (mm)</label>
+                <input type="range" min="1" max="50" value="10" style="width:100%" oninput="document.getElementById('thick-val').innerText = this.value">
+                <span>Selected: <span id="thick-val">10</span>mm</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Color</label>
+                <div class="color-options">
+                    <div class="color-dot" style="background:black;" onclick="selectColor('Black', this)"></div>
+                    <div class="color-dot" style="background:brown;" onclick="selectColor('Brown', this)"></div>
+                    <div class="color-dot" style="background:grey;" onclick="selectColor('Grey', this)"></div>
+                    <div class="color-dot" style="background:green;" onclick="selectColor('Green', this)"></div>
+                </div>
+                <p id="color-name">Black</p>
+            </div>
+
+            <div class="btn-nav">
+                <button class="btn btn-secondary" onclick="showStep(1)">Back</button>
+                <button class="btn btn-primary" onclick="confirmOrder()">Confirm Order</button>
+            </div>
+        </div>
+
+        <div id="step3" class="hidden">
+            <div class="confirm-box">
+                <div class="success-icon">✅</div>
+                <h2>Order Confirmed!</h2>
+                <p>Your custom order has been received.</p>
+                
+                <div class="order-details">
+                    <p><strong>Product:</strong> <span id="conf-prod"></span></p>
+                    <p><strong>Field:</strong> <span id="conf-field"></span></p>
+                    <p><strong>Spec:</strong> <span id="conf-spec"></span></p>
+                    <p><strong>Color:</strong> <span id="conf-color"></span></p>
+                </div>
+
+                <p style="color: #2e7d32; font-weight: bold;">Estimated Delivery: 7 Days</p>
+                <br>
+                <a href="product.html" class="btn btn-primary">Return to Products</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get product name from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product') || "Product";
+        document.getElementById('product-title-display').innerText = "Customizing: " + product;
+
+        let selectedField = "";
+        let selectedColor = "Black";
+        let selectedThick = "10";
+
+        function selectField(field) {
+            selectedField = field;
+            document.getElementById('selected-field').innerText = field;
+            showStep(2);
+        }
+
+        function selectColor(color, el) {
+            selectedColor = color;
+            document.getElementById('color-name').innerText = color;
+            // Visual selection logic here (simple version)
+            document.querySelectorAll('.color-dot').forEach(d => d.style.border = "2px solid transparent");
+            el.style.border = "2px solid #000";
+        }
+
+        function confirmOrder() {
+            // Set values for confirmation
+            document.getElementById('conf-prod').innerText = product;
+            document.getElementById('conf-field').innerText = selectedField;
+            document.getElementById('conf-spec').innerText = document.getElementById('thick-val').innerText + "mm Thickness";
+            document.getElementById('conf-color').innerText = selectedColor;
+            showStep(3);
+        }
+
+        function showStep(num) {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.add('hidden');
+            
+            document.getElementById('st1').classList.remove('active');
+            document.getElementById('st2').classList.remove('active');
+            document.getElementById('st3').classList.remove('active');
+
+            document.getElementById('step'+num).classList.remove('hidden');
+            document.getElementById('st'+num).classList.add('active');
+        }
+    </script>
+</body>
+</html>

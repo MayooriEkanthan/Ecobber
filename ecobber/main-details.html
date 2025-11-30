@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Ecobber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <style>
+        .detail-container { 
+            max-width: 1100px; 
+            margin: 120px auto 50px; 
+            background: white; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05); 
+            border-radius: 10px; 
+            overflow: hidden; 
+        }
+        
+        /* Top Section: Image & Info */
+        .product-split { display: grid; grid-template-columns: 1fr 1fr; }
+        
+        .image-col { 
+            background: #f4f4f4; 
+            padding: 40px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: relative;
+        }
+        .image-col img { 
+            width: 100%; 
+            max-width: 450px; 
+            border-radius: 8px; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+            transition: transform 0.3s;
+            cursor: zoom-in;
+        }
+        .image-col img:hover { transform: scale(1.3); } /* Zoom Effect */
+        .zoom-hint { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 0.8rem; opacity: 0.6; }
+
+        .info-col { padding: 50px; }
+        .product-badge { background: #e8f5e9; color: #2e7d32; padding: 5px 15px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; display: inline-block; margin-bottom: 15px; }
+
+        /* Usage Section */
+        .usage-section { margin-top: 30px; }
+        .usage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; }
+        .usage-item { text-align: center; border: 1px solid #eee; padding: 15px; border-radius: 8px; }
+        .usage-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
+
+        /* Order Form Section */
+        .order-section { background: #fafafa; padding: 30px; margin-top: 30px; border-radius: 8px; border-left: 5px solid #2e7d32; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
+        .form-input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Outfit'; }
+        
+        /* Responsive */
+        @media (max-width: 768px) { .product-split { grid-template-columns: 1fr; } }
+        
+        .success-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 999; }
+        .success-card { background: white; padding: 40px; border-radius: 10px; text-align: center; max-width: 400px; }
+    </style>
+</head>
+
+<body style="background-color: #f9f9f9;">
+
+    <header style="background: white;">
+        <div class="container">
+            <nav><a href="index.html" class="logo-img"><img src="src/logo/Ecobber.png" alt="logo"></a><div class="brand-text">Ecobber</div></nav>
+        </div>
+    </header>
+
+    <div class="container detail-container">
+        <div class="product-split">
+            <div class="image-col">
+                <img id="d-img" src="" alt="Product Texture">
+                <span class="zoom-hint">🔍 Hover to Inspect Texture</span>
+            </div>
+
+            <div class="info-col">
+                <span class="product-badge">Main Product</span>
+                <h1 id="d-title" style="margin-bottom: 15px;">Product Name</h1>
+                <p id="d-desc" style="color: #666; line-height: 1.6;">Description goes here...</p>
+
+                <div class="usage-section">
+                    <h4>Best Applications:</h4>
+                    <div class="usage-grid" id="usage-grid">
+                        </div>
+                </div>
+
+                <div class="order-section">
+                    <h3 style="margin-bottom: 20px;">Place Your Order</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Quantity Needed</label>
+                            <input type="text" placeholder="e.g. 500 Sheets / 1000kg" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Timeline</label>
+                            <select class="form-input">
+                                <option>Urgent (Within 7 days)</option>
+                                <option>Standard (14-21 days)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Requirements (Thickness, Hardness, etc.)</label>
+                        <textarea class="form-input" rows="3" placeholder="Specify technical details here..."></textarea>
+                    </div>
+                    <button class="btn btn-primary" onclick="submitOrder()" style="width: 100%; margin-top: 15px;">Request Quote & Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="successPopup" class="success-overlay">
+        <div class="success-card">
+            <div style="font-size: 3rem; margin-bottom: 10px;">🎉</div>
+            <h2>Request Sent!</h2>
+            <p>We have received your order details. Our sales team will verify inventory and contact you within 24 hours.</p>
+            <a href="product.html" class="btn btn-primary" style="margin-top: 20px; display:inline-block;">Back to Catalog</a>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA DATABASE ---
+        const data = {
+            "Natural Rubber Sheets": {
+                img: "src/Ecobber/Selection (5).jpg",
+                desc: "Our premium Natural Rubber Sheets are manufactured from high-grade latex, ensuring excellent elasticity, tensile strength, and abrasion resistance. The surface texture is smooth and consistent, free from impurities.",
+                uses: [
+                    {icon: "🏭", text: "Industrial Gaskets"},
+                    {icon: "🔈", text: "Sound Proofing"},
+                    {icon: "🏥", text: "Medical Grade"}
+                ]
+            },
+            "Rubber Compounds": {
+                img: "src/Ecobber/Selection (6).jpg",
+                desc: "Custom-mixed rubber compounds delivered in uncured sheets or strips. We can adjust the formula (NR, SBR, NBR) to meet specific hardness and curing requirements.",
+                uses: [
+                    {icon: "🚗", text: "Auto Parts"},
+                    {icon: "🔌", text: "Cable Insulation"},
+                    {icon: "👢", text: "Footwear Soles"}
+                ]
+            },
+            "Specialty Components": {
+                img: "src/Ecobber/Selection (7).jpg",
+                desc: "Precision molded components designed for high-stress environments. Features enhanced oil, heat, and chemical resistance based on your specifications.",
+                uses: [
+                    {icon: "⛽", text: "Oil & Gas Seals"},
+                    {icon: "🚜", text: "Heavy Machinery"},
+                    {icon: "✈️", text: "Aerospace"}
+                ]
+            }
+        };
+
+        // --- LOAD CONTENT ---
+        const params = new URLSearchParams(window.location.search);
+        const prodName = params.get('product');
+
+        if (data[prodName]) {
+            document.getElementById('d-title').innerText = prodName;
+            document.getElementById('d-img').src = data[prodName].img;
+            document.getElementById('d-desc').innerText = data[prodName].desc;
+
+            // Load Usage Icons
+            const grid = document.getElementById('usage-grid');
+            data[prodName].uses.forEach(u => {
+                grid.innerHTML += `
+                    <div class="usage-item">
+                        <span class="usage-icon">${u.icon}</span>
+                        <span style="font-size:0.8rem; font-weight:600;">${u.text}</span>
+                    </div>
+                `;
+            });
+        } else {
+            document.getElementById('d-title').innerText = "Product Not Found";
+        }
+
+        // --- SUBMIT LOGIC ---
+        function submitOrder() {
+            document.getElementById('successPopup').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

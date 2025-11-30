@@ -1,0 +1,515 @@
+/* Home Page Specific Styles */
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background-image: url("../src/home/tyre hero.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding-left: 5%;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hero-content .btn {
+    background-color: #6da04b;
+    /* Light green button */
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+.hero-content .btn:hover {
+    background-color: #5a883c;
+}
+
+/* Why Us Section */
+.why-us {
+    background-color: #0f2e1a;
+    /* Dark Green */
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.why-us p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+/* Sustainable Pillars Section */
+.pillars {
+    background-color: #f5f1e8;
+    /* Light Beige */
+    padding: 80px 0;
+    position: relative;
+}
+
+.pillars h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #000;
+}
+
+.pillars-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Dark green strip behind cards */
+.pillars-grid::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 120px;
+    background-color: #0f2e1a;
+    /* Dark Green */
+    z-index: -1;
+}
+
+.pillar-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 0;
+    /* Square corners as per design */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-10px);
+}
+
+.pillar-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #0f2e1a;
+    /* Dark icon color */
+}
+
+.pillar-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #000;
+    font-weight: 700;
+}
+
+.pillar-card p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Workflow Teaser Section */
+.workflow-teaser {
+    background-color: #000;
+    /* Black */
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.workflow-teaser h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.workflow-teaser p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.workflow-teaser .btn {
+    background-color: #4CAF50;
+    /* Green button */
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    /* Rounded pill shape */
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #f5f1e8;
+    /* Light Beige */
+    padding: 80px 0;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.faq-header .badge {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.faq-header h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #333;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer p {
+    color: #666;
+    padding-bottom: 20px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding-top: 0;
+}
+
+
+.why-us p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+/* Sustainable Pillars Section */
+.pillars {
+    background-color: #f5f1e8;
+    /* Light Beige */
+    padding: 80px 0;
+    position: relative;
+}
+
+.pillars h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #000;
+}
+
+.pillars-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Dark green strip behind cards */
+.pillars-grid::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 120px;
+    background-color: #0f2e1a;
+    /* Dark Green */
+    z-index: -1;
+}
+
+.pillar-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 0;
+    /* Square corners as per design */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-10px);
+}
+
+.pillar-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #0f2e1a;
+    /* Dark icon color */
+}
+
+.pillar-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #000;
+    font-weight: 700;
+}
+
+.pillar-card p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Workflow Teaser Section */
+.workflow-teaser {
+    background-color: #000;
+    /* Black */
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.workflow-teaser h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.workflow-teaser p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.workflow-teaser .btn {
+    background-color: #4CAF50;
+    /* Green button */
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    /* Rounded pill shape */
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #f5f1e8;
+    /* Light Beige */
+    padding: 80px 0;
+}
+
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.faq-header .badge {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 1rem;
+    border-left: red 4px solid;
+}
+
+.faq-header h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: #333;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer p {
+    color: #666;
+    padding-bottom: 20px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding-top: 0;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Responsive Home */
+@media (max-width: 768px) {
+    .hero-content {
+        padding-left: 0;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pillars-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pillars-grid::before {
+        display: none;
+        /* Hide strip on mobile */
+    }
+
+    .pillar-card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-header h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .faq-header {
+        text-align: center;
+    }
+}

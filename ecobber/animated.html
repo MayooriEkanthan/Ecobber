@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecobber - Sustainable Rubber Processing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/animated.css">
+</head>
+
+<body>
+    <div id="app" class="container">
+        <!-- Header Section -->
+        <header class="header fade-in">
+            <h1>Ecobber <span>Processing Flow</span></h1>
+            <p id="stage-description">Main Products from Natural Rubber Sheets</p>
+
+            <!-- Stage Indicators -->
+            <div class="stage-indicators">
+                <div class="stage-step active" data-step="main">
+                    1. Main Products
+                </div>
+                <div class="arrow">→</div>
+                <div class="stage-step" data-step="process">
+                    2. Processes
+                </div>
+                <div class="arrow">→</div>
+                <div class="stage-step" data-step="subproduct">
+                    3. Sub-Products
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <a href="workflow.html" class="btn btn-secondary" style="margin-right: 10px;">Back to Workflow</a>
+            <button id="nav-btn" class="btn btn-primary">Show Processes</button>
+            <button id="reset-btn" class="btn btn-secondary hidden">Reset to Start</button>
+        </header>
+
+        <!-- Visualization Area -->
+        <div class="visualization-area">
+            <!-- SVG Layer for Connections -->
+            <svg id="connections-layer" class="connections-layer">
+                <!-- Paths and particles will be injected here by JS -->
+            </svg>
+
+            <!-- Grid Layout -->
+            <div class="grid-layout">
+                <!-- Left: Material Source -->
+                <div class="column source-column fade-in">
+                    <div id="material-source" class="card">
+                        <div class="card-header">
+                            <div class="icon-box source-icon">
+                                📄
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.1rem; font-weight: 700;">Main Material</h3>
+                                <div class="subtitle">Primary Input</div>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-title">Natural Rubber Sheets</div>
+                            <div class="info-desc">High-quality processed rubber sheets from plantations</div>
+                            <ul class="info-list">
+                                <li><span>→</span> Trimmed & sized sheets</li>
+                                <li><span>→</span> Off-cuts & trimmings</li>
+                                <li><span>→</span> Defective sheets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center: Processing Center -->
+                <div class="column center-column fade-in">
+                    <div id="processing-center" class="center-node">
+                        <!-- Content injected by JS based on stage -->
+                    </div>
+                </div>
+
+                <!-- Right: Products -->
+                <div class="column products-column fade-in">
+                    <div id="products-container" class="products-list">
+                        <!-- Content injected by JS based on stage -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Process Modal -->
+    <div id="detailed-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close">×</button>
+            <div id="modal-body">
+                <!-- Dynamic Vertical Timeline will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/animated.js"></script>
+</body>
+
+</html>

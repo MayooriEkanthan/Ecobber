@@ -1,0 +1,466 @@
+:root {
+    /* Colors */
+    --color-primary-dark: #0a1f0a;
+    --color-primary-green: #4CAF50;
+    --color-primary-green-dark: #388E3C;
+    --color-secondary-beige: #f8f8d5;
+    --color-text-light: #f4f4f4;
+    --color-text-dark: #333333;
+    --color-text-muted: #666666;
+    --color-accent-lime: #8BC34A;
+
+    /* Typography */
+    --font-primary: 'Outfit', 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-poppins: 'Poppins', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-dark);
+    background-color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+ul {
+    list-style: none;
+
+}
+
+.nav-links {
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Typography Utilities */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Layout Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--color-primary-green);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-green-dark);
+    transform: translateY(-2px);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-light {
+    color: var(--color-text-light);
+}
+
+.bg-dark {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+}
+
+.bg-beige {
+    background-color: var(--color-secondary-beige);
+}
+
+/* Header & Nav */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+nav {
+    /* Keep the original layout for the logo and brand text, but remove fixed position */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* REMOVE all position:fixed, top, width, z-index */
+}
+
+/* New CSS for the floating link container */
+.navbar-fixed {
+    /* --- APPLY FIXED POSITIONING HERE --- */
+    position: fixed;
+    top: 10px;
+    z-index: 1000;
+
+    /* --- CENTERING STYLES --- */
+    left: 50%;
+    /* 👈 Must be 50% to center it on the entire page */
+    transform: translateX(-50%);
+    /* Pulls the element back by half its own width */
+    /* ------------------------ */
+    /* Optional: Ensure the links are aligned vertically if needed */
+    display: flex;
+    align-items: center;
+}
+
+
+/* ... (rest of your existing CSS remains the same) ... */
+
+.logo-img img {
+    height: 85px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    background-color: rgba(24, 21, 21, 0.468);
+    padding: 15px;
+    border-radius: 18px;
+}
+
+.nav-links a {
+    color: #a4c16a;
+    font-weight: 500;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    opacity: 1;
+    text-decoration: underline;
+    color: #f4f4f4;
+}
+
+.brand-text {
+    color: #77da63;
+    font-size: 2rem;
+    font-family: var(--font-serif);
+    font-weight: 1000;
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-image: url("../src/footer/Ecobber\ \(2\).png");
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0 0;
+    position: relative;
+    overflow: hidden;
+    color: #0f2e1a;
+    font-family: var(--font-poppins);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 150px;
+    /* Space for large text */
+}
+
+.footer-brand-text h3 {
+    font-family: var(--font-poppins);
+    font-size: 2.5rem;
+    line-height: 1.1;
+    color: #0f2e1a;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+footer h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #0f2e1a;
+    text-transform: uppercase;
+    font-family: var(--font-poppins);
+}
+
+footer a {
+    display: block;
+    color: #0f2e1a;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    font-family: var(--font-poppins);
+}
+
+footer a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+    font-family: var(--font-poppins);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+/* 
+Large Footer Brand
+.footer-brand-large {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+.copyright {
+    position: relative;
+    z-index: 3;
+    color: rgba(255, 255, 255, 0.6);
+    padding-bottom: 20px;
+    font-size: 0.8rem;
+    font-family: var(--font-poppins);
+}
+*/
+
+@media (max-width: 768px) {
+
+    /* 1. Reset the floating container to be static on mobile */
+    .navbar-fixed {
+        /* CRITICAL: Disable floating/centering styles */
+        /* display: none;  <-- REMOVED THIS LINE so the menu is part of the DOM */
+        position: static !important;
+        left: auto !important;
+        transform: none !important;
+        z-index: auto !important;
+    }
+
+    /* 2. Style for the actual link list (ul.nav-links) - this is your slide-out menu */
+    .nav-links {
+        /* Ensure these styles are still active for the mobile slide-out */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 50vh;
+        width: 70%;
+        background-color: var(--color-primary-dark);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(51, 189, 106, 0.456);
+    }
+
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* Mobile Footer Customization */
+    footer {
+        background-image: url('../src/footer/Ecobber (450 x 1200 px).png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    footer,
+    footer h3,
+    footer p,
+    footer a,
+    .footer-brand-large h2 {
+        color: #f8f8d5 !important;
+        /* Beige color for mobile */
+    }
+
+    .social-icons a {
+        color: #f8f8d5 !important;
+        border-color: #f8f8d5 !important;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--color-primary-green);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#modalTitle {
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+}
+
+#modalDescription {
+    color: var(--color-text-dark);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}

@@ -1,0 +1,464 @@
+/* Contact Page Styles */
+
+.contact-hero {
+    background-color: #9bfc2d;
+    /* Light green from design */
+    padding: 150px 0 100px;
+    position: relative;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Ensure rectangles don't overflow */
+}
+
+header {
+    background-color: #f8f8d5;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    width: 1500px;
+}
+
+.relative-z {
+    position: relative;
+    z-index: 2;
+}
+
+/* Background Rectangles */
+.bg-rectangles {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-30%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    /* Spacing between rectangles */
+    pointer-events: none;
+}
+
+.bg-rect {
+    width: 100%;
+    height: 20px;
+    background-color: rgba(3, 21, 1, 0.393);
+    /* Dark color with transparency */
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    /* Center the group of cards */
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+    margin-top: var(--spacing-lg);
+}
+
+.c-card {
+    background: #fff;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 250px;
+    /* Minimum width for cards */
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.c-card:hover {
+    transform: translateY(-5px);
+}
+
+.c-card .icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary-green);
+}
+
+.c-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.c-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+/* Form Section */
+.contact-layout {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.plane-illustration img {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+.contact-form-wrapper {
+    flex: 1.5;
+    background: #fff;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Locations */
+.locations-layout {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+    margin-top: var(--spacing-lg);
+}
+
+.map-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.locations-list {
+    flex: 1;
+}
+
+.location-badge {
+    background: #330000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.location-card {
+    background: #e0e0e0;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: 8px;
+    border-left: 4px solid #8BC34A;
+    /* Default accent */
+}
+
+.location-card:nth-child(2) {
+    border-color: #a52a2a;
+}
+
+/* India - Reddish */
+.location-card:nth-child(3) {
+    border-color: #a52a2a;
+}
+
+/* Malaysia */
+.location-card:nth-child(4) {
+    border-color: #a52a2a;
+}
+
+/* Singapore */
+
+.location-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    width: 1500px;
+}
+
+.relative-z {
+    position: relative;
+    z-index: 2;
+}
+
+/* Background Rectangles */
+.bg-rectangles {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-30%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    /* Spacing between rectangles */
+    pointer-events: none;
+}
+
+.bg-rect {
+    width: 100%;
+    height: 20px;
+    background-color: rgba(3, 21, 1, 0.393);
+    /* Dark color with transparency */
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    /* Center the group of cards */
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+    margin-top: var(--spacing-lg);
+}
+
+.c-card {
+    background: #fff;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 250px;
+    /* Minimum width for cards */
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.c-card:hover {
+    transform: translateY(-5px);
+}
+
+.c-card .icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-primary-green);
+}
+
+.c-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.c-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+/* Form Section */
+.contact-layout {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.plane-illustration img {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+.contact-form-wrapper {
+    flex: 1.5;
+    background: #fff;
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Locations */
+.locations-layout {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+    margin-top: var(--spacing-lg);
+}
+
+.map-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.locations-list {
+    flex: 1;
+}
+
+.location-badge {
+    background: #330000;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 15px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.location-card {
+    background: #e0e0e0;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: 8px;
+    border-left: 4px solid #8BC34A;
+    /* Default accent */
+}
+
+.location-card:nth-child(2) {
+    border-color: #a52a2a;
+}
+
+/* India - Reddish */
+.location-card:nth-child(3) {
+    border-color: #a52a2a;
+}
+
+/* Malaysia */
+.location-card:nth-child(4) {
+    border-color: #a52a2a;
+}
+
+/* Singapore */
+
+.location-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.location-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .contact-hero {
+        padding: 120px 0 80px;
+    }
+
+    .contact-layout,
+    .locations-layout {
+        flex-direction: column;
+    }
+
+    .contact-image {
+        display: none;
+        /* Hide image on mobile to save space or stack it */
+    }
+
+    .contact-form-wrapper {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .c-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .map-visual {
+        margin-bottom: 2rem;
+    }
+
+    .map-visual img {
+        width: 100%;
+        height: auto;
+    }
+}
