@@ -1,42 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customize Order - Ecobber</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
-    
+
     <style>
-        /* Custom Styles for this page only */
-        .wizard-container { max-width: 900px; margin: 50px auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .step-header { display: flex; justify-content: space-between; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .step { color: #aaa; font-weight: 600; }
-        .step.active { color: #2e7d32; }
+        .wizard-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 50px;
+            top:68px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
 
-        /* Step 1: Field Selection */
-        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .industry-card { border: 2px solid #eee; border-radius: 10px; padding: 25px; text-align: center; cursor: pointer; transition: 0.3s; }
-        .industry-card:hover, .industry-card.selected { border-color: #2e7d32; background: #f1f8e9; }
-        .ind-icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+        .step-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
 
-        /* Step 2: Form */
-        .form-group { margin-bottom: 20px; }
-        .form-label { display: block; font-weight: 600; margin-bottom: 8px; }
-        .color-options { display: flex; gap: 10px; }
-        .color-dot { width: 35px; height: 35px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
-        .color-dot.selected { border-color: #000; transform: scale(1.1); }
+        .step {
+            color: #ccc;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
 
-        /* Step 3: Confirmation */
-        .confirm-box { text-align: center; padding: 40px; }
-        .success-icon { font-size: 4rem; margin-bottom: 20px; }
-        .order-details { background: #fafafa; padding: 20px; margin: 20px 0; text-align: left; border-radius: 8px; }
+        .step.active {
+            color: #2e7d32;
+            border-bottom: 2px solid #2e7d32;
+            margin-bottom: -22px;
+            padding-bottom: 20px;
+        }
 
-        .hidden { display: none; }
-        .btn-nav { margin-top: 30px; display: flex; justify-content: space-between; }
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .industry-card {
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .industry-card:hover,
+        .industry-card.selected {
+            border-color: #2e7d32;
+            background: #f1f8e9;
+        }
+
+        .ind-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .color-dot {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .color-dot.selected {
+            border-color: #000;
+            transform: scale(1.1);
+        }
+
+        .confirm-box {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .order-details {
+            background: #fafafa;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 8px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .btn-nav {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        /* Back Button */
+        .btn-back-nav {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #2e7d32;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-back-nav:hover {
+            transform: translateX(-5px);
+            color: #1b5e20;
+        }
+
+        .btn-back-nav span {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
     </style>
 </head>
-<body style="background-color: #f9f9f9;">
+
+<body style="background-color: #9eda36;">
 
     <header style="background: white;">
         <div class="container">
@@ -48,7 +173,8 @@
     </header>
 
     <div class="wizard-container">
-        <h2 id="product-title-display">Customizing Product</h2>
+        <a href="product.html" class="btn-back-nav"><span>&#8592;</span> Back to Products</a>
+        <h2 id="product-title-display" style="margin-top: 10px;">Customizing Product</h2>
         <div class="step-header">
             <span class="step active" id="st1">1. Select Industry</span>
             <span class="step" id="st2">2. Customize Specs</span>
@@ -57,38 +183,20 @@
 
         <div id="step1">
             <p>Which field will this product be used for?</p>
-            <div class="industry-grid">
-                <div class="industry-card" onclick="selectField('Footwear')">
-                    <span class="ind-icon">👟</span>
-                    <h3>Footwear</h3>
-                    <p>Soles, insoles</p>
-                </div>
-                <div class="industry-card" onclick="selectField('Automotive')">
-                    <span class="ind-icon">🚗</span>
-                    <h3>Vehicle Mechanics</h3>
-                    <p>Gaskets, mats</p>
-                </div>
-                <div class="industry-card" onclick="selectField('Construction')">
-                    <span class="ind-icon">🏗️</span>
-                    <h3>Construction</h3>
-                    <p>Flooring, insulation</p>
-                </div>
+            <div id="industry-grid-container" class="industry-grid">
             </div>
         </div>
 
         <div id="step2" class="hidden">
             <p>Customize details for <strong id="selected-field"></strong> application:</p>
-            
-            <div class="form-group">
-                <label class="form-label">Thickness (mm)</label>
-                <input type="range" min="1" max="50" value="10" style="width:100%" oninput="document.getElementById('thick-val').innerText = this.value">
-                <span>Selected: <span id="thick-val">10</span>mm</span>
-            </div>
 
-            <div class="form-group">
-                <label class="form-label">Color</label>
+            <div id="spec-fields-container"></div>
+
+            <div class="form-group" id="color-group">
+                <label class="form-label">Color Preference</label>
                 <div class="color-options">
-                    <div class="color-dot" style="background:black;" onclick="selectColor('Black', this)"></div>
+                    <div class="color-dot" style="background:black; border: 2px solid #000;"
+                        onclick="selectColor('Black', this)"></div>
                     <div class="color-dot" style="background:brown;" onclick="selectColor('Brown', this)"></div>
                     <div class="color-dot" style="background:grey;" onclick="selectColor('Grey', this)"></div>
                     <div class="color-dot" style="background:green;" onclick="selectColor('Green', this)"></div>
@@ -105,68 +213,190 @@
         <div id="step3" class="hidden">
             <div class="confirm-box">
                 <div class="success-icon">✅</div>
-                <h2>Order Confirmed!</h2>
-                <p>Your custom order has been received.</p>
-                
+                <h2>Order Request Sent!</h2>
+                <p>Our team will contact you with a formal quote shortly.</p>
+
                 <div class="order-details">
                     <p><strong>Product:</strong> <span id="conf-prod"></span></p>
-                    <p><strong>Field:</strong> <span id="conf-field"></span></p>
-                    <p><strong>Spec:</strong> <span id="conf-spec"></span></p>
-                    <p><strong>Color:</strong> <span id="conf-color"></span></p>
+                    <p><strong>Industry:</strong> <span id="conf-field"></span></p>
+                    <p><strong>Specifications:</strong> <span id="conf-spec"></span></p>
+                    <p id="conf-color-row"><strong>Color:</strong> <span id="conf-color"></span></p>
                 </div>
-
-                <p style="color: #2e7d32; font-weight: bold;">Estimated Delivery: 7 Days</p>
-                <br>
                 <a href="product.html" class="btn btn-primary">Return to Products</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Get product name from URL
         const urlParams = new URLSearchParams(window.location.search);
-        const product = urlParams.get('product') || "Product";
+        const product = urlParams.get('product') || "Our Product";
         document.getElementById('product-title-display').innerText = "Customizing: " + product;
 
         let selectedField = "";
         let selectedColor = "Black";
-        let selectedThick = "10";
+
+        // Initialize Industry List on Load
+        window.onload = function () {
+            const grid = document.getElementById('industry-grid-container');
+            let html = "";
+
+            if (product.includes("Tiles") || product.includes("Flooring") || product.includes("Mats")) {
+                html = `
+                    <div class="industry-card" onclick="selectField('Sports & Fitness')">
+                        <span class="ind-icon">🏋️</span>
+                        <h3>Sports & Gyms</h3>
+                        <p>High-impact flooring</p>
+                    </div>
+                    <div class="industry-card" onclick="selectField('Construction')">
+                        <span class="ind-icon">🏗️</span>
+                        <h3>Construction</h3>
+                        <p>Playgrounds & Paths</p>
+                    </div>`;
+            } else if (product.includes("Crumbs") || product.includes("Granules") || product.includes("Crumb")) {
+                html = `
+                    <div class="industry-card" onclick="selectField('Athletics')">
+                        <span class="ind-icon">🏃</span>
+                        <h3>Athletics</h3>
+                        <p>Running tracks & Turf</p>
+                    </div>
+                    <div class="industry-card" onclick="selectField('Manufacturing')">
+                        <span class="ind-icon">⚙️</span>
+                        <h3>Manufacturing</h3>
+                        <p>Molded parts & Raw goods</p>
+                    </div>`;
+            } else if (product.includes("Fuel")) {
+                html = `
+                    <div class="industry-card" onclick="selectField('Energy Plant')">
+                        <span class="ind-icon">⚡</span>
+                        <h3>Power Plants</h3>
+                        <p>Industrial Boilers</p>
+                    </div>
+                    <div class="industry-card" onclick="selectField('Heavy Industry')">
+                        <span class="ind-icon">🏭</span>
+                        <h3>Cement & Steel</h3>
+                        <p>Kiln & Furnace Fuel</p>
+                    </div>`;
+            } else {
+                html = `
+                    <div class="industry-card" onclick="selectField('Automotive')">
+                        <span class="ind-icon">🚗</span>
+                        <h3>Automotive</h3>
+                        <p>Tires, Gaskets & Seals</p>
+                    </div>
+                    <div class="industry-card" onclick="selectField('General Industrial')">
+                        <span class="ind-icon">🏭</span>
+                        <h3>Manufacturing</h3>
+                        <p>Technical Rubber Parts</p>
+                    </div>`;
+            }
+            grid.innerHTML = html;
+        };
+
+        function loadProductSpecificSpecs() {
+            const specContainer = document.getElementById('spec-fields-container');
+            const colorGroup = document.getElementById('color-group');
+            let html = "";
+
+            // Hide color picker for Fuel and raw Industrial materials
+            colorGroup.style.display = (product.includes("Fuel") || product.includes("Reclaimed")) ? "none" : "block";
+
+            if (product.includes("Tiles") || product.includes("Flooring") || product.includes("Mats")) {
+                html = `
+                    <div class="form-group">
+                        <label class="form-label">Thickness (mm)</label>
+                        <input type="range" min="10" max="50" value="20" class="w-100" oninput="document.getElementById('thick-val').innerText = this.value">
+                        <span>Selected: <span id="thick-val">20</span>mm</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Installation Area (sq. meters)</label>
+                        <input type="number" id="area-input" placeholder="e.g. 100" class="form-input">
+                    </div>`;
+            } else if (product.includes("Crumbs") || product.includes("Granules") || product.includes("Crumb")) {
+                html = `
+                    <div class="form-group">
+                        <label class="form-label">Mesh Size (Granule Diameter)</label>
+                        <select id="mesh-select" class="form-input">
+                            <option>Fine (0.5 - 1.5mm)</option>
+                            <option selected>Medium (1.5 - 3.0mm)</option>
+                            <option>Coarse (3.0 - 5.0mm)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Application Type</label>
+                        <select id="app-select" class="form-input">
+                            <option>Pour-in-Place Surfacing</option>
+                            <option>Loose Infill</option>
+                            <option>Asphalt Modification</option>
+                        </select>
+                    </div>`;
+            } else if (product.includes("Fuel")) {
+                html = `
+                    <div class="form-group">
+                        <label class="form-label">Required Chip Size</label>
+                        <select id="fuel-select" class="form-input">
+                            <option>Whole Tire</option>
+                            <option>TDF Chip (2 inch)</option>
+                            <option>Wire-Free Shreds</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Monthly Demand (Tons)</label>
+                        <input type="number" id="demand-input" placeholder="e.g. 50" class="form-input">
+                    </div>`;
+            } else {
+                html = `
+                    <div class="form-group">
+                        <label class="form-label">Target Mooney Viscosity / Tensile Strength</label>
+                        <input type="text" id="tech-input" placeholder="e.g. 50 ML 1+4 / 15 MPa" class="form-input">
+                    </div>`;
+            }
+            specContainer.innerHTML = html;
+        }
 
         function selectField(field) {
             selectedField = field;
             document.getElementById('selected-field').innerText = field;
+            loadProductSpecificSpecs();
             showStep(2);
         }
 
         function selectColor(color, el) {
             selectedColor = color;
             document.getElementById('color-name').innerText = color;
-            // Visual selection logic here (simple version)
             document.querySelectorAll('.color-dot').forEach(d => d.style.border = "2px solid transparent");
             el.style.border = "2px solid #000";
         }
 
         function confirmOrder() {
-            // Set values for confirmation
             document.getElementById('conf-prod').innerText = product;
             document.getElementById('conf-field').innerText = selectedField;
-            document.getElementById('conf-spec').innerText = document.getElementById('thick-val').innerText + "mm Thickness";
+
+            let specText = "";
+            if (document.getElementById('thick-val')) specText += document.getElementById('thick-val').innerText + "mm Thick. ";
+            if (document.getElementById('area-input')) specText += "Area: " + document.getElementById('area-input').value + "sqm. ";
+            if (document.getElementById('mesh-select')) specText += "Mesh: " + document.getElementById('mesh-select').value + ". ";
+            if (document.getElementById('fuel-select')) specText += "Format: " + document.getElementById('fuel-select').value + ". ";
+            if (document.getElementById('tech-input')) specText += "Specs: " + document.getElementById('tech-input').value;
+
+            document.getElementById('conf-spec').innerText = specText || "Standard Grade";
             document.getElementById('conf-color').innerText = selectedColor;
+
+            if (product.includes("Fuel") || product.includes("Reclaimed")) {
+                document.getElementById('conf-color-row').style.display = "none";
+            }
             showStep(3);
         }
 
         function showStep(num) {
-            document.getElementById('step1').classList.add('hidden');
-            document.getElementById('step2').classList.add('hidden');
-            document.getElementById('step3').classList.add('hidden');
-            
-            document.getElementById('st1').classList.remove('active');
-            document.getElementById('st2').classList.remove('active');
-            document.getElementById('st3').classList.remove('active');
-
-            document.getElementById('step'+num).classList.remove('hidden');
-            document.getElementById('st'+num).classList.add('active');
+            [1, 2, 3].forEach(n => {
+                document.getElementById('step' + n).classList.add('hidden');
+                document.getElementById('st' + n).classList.remove('active');
+            });
+            document.getElementById('step' + num).classList.remove('hidden');
+            document.getElementById('st' + num).classList.add('active');
+            window.scrollTo(0, 0);
         }
     </script>
 </body>
+
 </html>
