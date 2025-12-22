@@ -8,35 +8,67 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/product.css">
 
     <style>
-        .search-container { text-align: center; margin: -20px auto 40px; max-width: 600px; position: relative; z-index: 10; }
-        .search-input { width: 100%; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-family: 'Outfit', sans-serif; box-shadow: 0 5px 20px rgba(0,0,0,0.05); outline: none; transition: 0.3s; }
-        .search-input:focus { border-color: #2e7d32; box-shadow: 0 5px 20px rgba(46, 125, 50, 0.2); }
-        
+        body {
+           
+            background-color: #b9ff80;
+            color: #333;
+        }
+        .search-container {
+            text-align: center;
+            margin: 30px auto 40px;
+            max-width: 600px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+            font-family: 'Outfit', sans-serif;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #2e7d32;
+            box-shadow: 0 5px 20px rgba(46, 125, 50, 0.2);
+        }
+
         /* Universal Custom Button Style */
-        .btn-custom { 
-            display: inline-block; 
-            margin-top: 15px; 
-            padding: 10px 25px; 
-            background-color: #2e7d32; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            font-size: 0.9rem; 
+        .btn-custom {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
             transition: 0.3s;
             border: 1px solid #2e7d32;
             text-align: center;
         }
-        .btn-custom:hover { background-color: #1b5e20; border-color: #1b5e20; }
-        
+
+        .btn-custom:hover {
+            background-color: #1b5e20;
+            border-color: #1b5e20;
+        }
+
         /* Secondary style for Main Products to stand out */
         .btn-main {
-            background-color: #1b5e20; /* Darker green */
+            background-color: #1b5e20;
+            /* Darker green */
             width: 100%;
         }
     </style>
@@ -56,9 +88,9 @@
                 </div>
             </nav>
 
-            <div class="navbar-fixed"> 
+            <div class="navbar-fixed">
                 <ul class="nav-links">
-                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About us</a></li>
                     <li><a href="product.html" class="active">Product</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -71,13 +103,15 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <h1>Our Sustainable Product Line</h1>
-            <p class="max-w-800">Ecobber offers a diverse range of high-performance rubber products manufactured with a commitment to zero waste.</p>
+            <p class="max-w-800">Ecobber offers a diverse range of high-performance rubber products manufactured with a
+                commitment to zero waste.</p>
         </div>
     </section>
 
     <div class="container">
         <div class="search-container">
-            <input type="text" id="productSearch" class="search-input" placeholder="Search products (e.g., Tiles, Sheets, Compounds)..." onkeyup="searchProducts()">
+            <input type="text" id="productSearch" class="search-input"
+                placeholder="Search products (e.g., Tiles, Sheets, Compounds)..." onkeyup="searchProducts()">
         </div>
     </div>
 
@@ -85,13 +119,14 @@
         <div class="container">
             <h2 class="text-center" style="margin-bottom: var(--spacing-lg);">Our Main Products</h2>
             <div class="product-grid">
-                
+
                 <div class="product-card" data-title="Natural Rubber Sheets">
                     <img src="src/Ecobber/Selection (5).jpg" alt="Natural Rubber Sheets">
                     <div class="p-content">
                         <h3>Natural Rubber Sheets</h3>
                         <p>Premium grade, sustainably harvested natural rubber sheets known for superior elasticity.</p>
-                        <a href="main-details.html?product=Natural Rubber Sheets" class="btn-custom btn-main">View Details & Order →</a>
+                        <a href="main-details.html?product=Natural Rubber Sheets" class="btn-custom btn-main">View
+                            Details & Order →</a>
                     </div>
                 </div>
 
@@ -100,7 +135,8 @@
                     <div class="p-content">
                         <h3>Rubber Compounds</h3>
                         <p>Custom-blended compounds optimized for specific industrial applications.</p>
-                        <a href="main-details.html?product=Rubber Compounds" class="btn-custom btn-main">View Details & Order →</a>
+                        <a href="main-details.html?product=Rubber Compounds" class="btn-custom btn-main">View Details &
+                            Order →</a>
                     </div>
                 </div>
 
@@ -109,7 +145,8 @@
                     <div class="p-content">
                         <h3>Specialty Components</h3>
                         <p>Tailored solutions for complex requirements, offering exceptional resistance.</p>
-                        <a href="main-details.html?product=Specialty Components" class="btn-custom btn-main">View Details & Order →</a>
+                        <a href="main-details.html?product=Specialty Components" class="btn-custom btn-main">View
+                            Details & Order →</a>
                     </div>
                 </div>
 
@@ -138,7 +175,8 @@
                     </div>
                 </div>
                 <div class="product-card small" data-title="Reclaimed Rubber">
-                    <img src="src/Ecobber/Reclaimed rubber/Lucid_Origin_A_closeup_photograph_of_reclaimed_rubber_showcasi_3.jpg" alt="Reclaimed Rubber">
+                    <img src="src/Ecobber/Reclaimed rubber/Lucid_Origin_A_closeup_photograph_of_reclaimed_rubber_showcasi_3.jpg"
+                        alt="Reclaimed Rubber">
                     <div class="p-content">
                         <h3>Reclaimed Rubber</h3>
                         <p>High-quality reclaimed rubber materials.</p>
@@ -162,7 +200,8 @@
             <h2 class="text-center" style="margin-bottom: var(--spacing-lg);">Eco Friendly Recycled products</h2>
             <div class="product-grid">
                 <div class="product-card" data-title="Recycled Rubber Flooring">
-                    <img src="src/Ecobber/rubber mats/Lucid_Origin_a_realistic_photograph_of_interlocking_rubber_til_2.jpg" alt="Recycled Rubber Flooring">
+                    <img src="src/Ecobber/rubber mats/Lucid_Origin_a_realistic_photograph_of_interlocking_rubber_til_2.jpg"
+                        alt="Recycled Rubber Flooring">
                     <div class="p-content">
                         <h3>Recycled Rubber Flooring</h3>
                         <p>Durable and eco-friendly flooring made from 100% recycled rubber.</p>
@@ -170,7 +209,8 @@
                     </div>
                 </div>
                 <div class="product-card" data-title="Rubber Granules">
-                    <img src="src/Ecobber/Rubber crumbs/Lucid_Origin_A_closeup_photograph_of_a_pile_of_rubber_crumbs_t_2.jpg" alt="Rubber Granules/Crumb">
+                    <img src="src/Ecobber/Rubber crumbs/Lucid_Origin_A_closeup_photograph_of_a_pile_of_rubber_crumbs_t_2.jpg"
+                        alt="Rubber Granules/Crumb">
                     <div class="p-content">
                         <h3>Rubber Granules/Crumb</h3>
                         <p>Versatile recycled rubber granules and crumb.</p>
@@ -193,7 +233,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand-text">
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;">Shaping Rubber!<br>Saving Nature!</h3>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;">Shaping
+                        Rubber!<br>Saving Nature!</h3>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
@@ -232,4 +273,5 @@
         }
     </script>
 </body>
+
 </html>
