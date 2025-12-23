@@ -1,7 +1,7 @@
 /* Product Page Styles */
 
 .product-hero {
-    background-image: url('../src/Ecobber/rubber mats/close-up-perforated-fabric (3).jpg');
+    background-image: url('../src/product/hero/product-hero.jpg');
     background-size: cover;
     background-position: center;
     padding: 180px 0 100px;
@@ -83,7 +83,7 @@
 /* Product Page Styles */
 
 .product-hero {
-    background-image: url('../src/Ecobber/rubber mats/close-up-perforated-fabric (3).jpg');
+    background-image: url('../src/product/hero/product-hero.jpg');
     background-size: cover;
     background-position: center;
     padding: 180px 0 100px;
