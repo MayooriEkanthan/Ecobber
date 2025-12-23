@@ -263,35 +263,19 @@
     animation: ctaArrowMove 1.5s infinite ease-in-out, arrowBounce 0.6s ease-out 0.2s 1;
 }
 
-/* Hover Boost */
-.process-cta-bar:hover .cta-text {
-    transform: translateX(400px);
-    transition: transform 2s ease;
-}
+
 
 /* Typewriter effect */
 /* Normal state */
 .cta-text {
     display: inline-block;
-    transform: translateX(0);
+    transform: none;
+    animation: none;
+    transition: none;
 }
 
-/* Run animation ONLY when button is clicked */
-.process-cta-bar:active .cta-text {
-    animation: slideText 0.9s ease forwards;
-}
 
-@keyframes slideText {
-    0% {
-        transform: translateX(0);
-    }
-    80% {
-        transform: translateX(14px); /* slight overshoot */
-    }
-    100% {
-        transform: translateX(12px); /* final stop near arrow */
-    }
-}
+
 
 
 
