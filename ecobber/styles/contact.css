@@ -1,8 +1,8 @@
 /* Contact Page Styles */
 
 .contact-hero {
-    background-color: #9bfc2d;
-    /* Light green from design */
+    background-color: #8bde42;
+    /* Light green from design 9bfc2d*/
     padding: 150px 0 100px;
     position: relative;
     text-align: center;
@@ -65,7 +65,7 @@ header {
     background: #fff;
     padding: var(--spacing-md);
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     flex: 1;
     min-width: 250px;
     /* Minimum width for cards */
@@ -119,7 +119,7 @@ header {
     background: #fff;
     padding: var(--spacing-lg);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .form-row {
@@ -187,6 +187,7 @@ header {
     margin-bottom: var(--spacing-md);
     border-radius: 8px;
     border-left: 4px solid #8BC34A;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     /* Default accent */
 }
 
@@ -262,7 +263,7 @@ header {
     background: #fff;
     padding: var(--spacing-md);
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     flex: 1;
     min-width: 250px;
     /* Minimum width for cards */
@@ -316,7 +317,7 @@ header {
     background: #fff;
     padding: var(--spacing-lg);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .form-row {
@@ -384,6 +385,7 @@ header {
     margin-bottom: var(--spacing-md);
     border-radius: 8px;
     border-left: 4px solid #8BC34A;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     /* Default accent */
 }
 

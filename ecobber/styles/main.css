@@ -226,7 +226,7 @@ nav {
 
 /* Footer */
 footer {
-    background-image: url("../src/footer/Ecobber\ \(2\).png");
+    background-image: url("../src/home/footer/footer-image(desktop).png");
     background-size: cover;
     background-position: center;
     padding: 80px 0 0;
@@ -295,22 +295,7 @@ footer p {
     display: inline-block;
 }
 
-/* 
-Large Footer Brand
-.footer-brand-large {
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    width: 100%;
-.copyright {
-    position: relative;
-    z-index: 3;
-    color: rgba(255, 255, 255, 0.6);
-    padding-bottom: 20px;
-    font-size: 0.8rem;
-    font-family: var(--font-poppins);
-}
-*/
+
 
 @media (max-width: 768px) {
 
@@ -377,7 +362,7 @@ Large Footer Brand
 
     /* Mobile Footer Customization */
     footer {
-        background-image: url('../src/footer/Ecobber (450 x 1200 px).png');
+        background-image: url('../src/home/footer/footer-image(mobile).png');
         background-size: cover;
         background-position: center;
     }

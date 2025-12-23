@@ -3,7 +3,7 @@
 /* Hero */
 .hero {
     height: 100vh;
-    background-image: url("../src/home/tyre hero.jpg");
+    background-image: url("../src/home/hero/home hero.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -124,7 +124,7 @@
     padding: 40px 30px;
     border-radius: 0;
     /* Square corners as per design */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     flex: 1;
     max-width: 350px;
     text-align: center;
@@ -231,7 +231,7 @@
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .faq-question {
@@ -319,7 +319,7 @@
     padding: 40px 30px;
     border-radius: 0;
     /* Square corners as per design */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     flex: 1;
     max-width: 350px;
     text-align: center;
@@ -427,7 +427,7 @@
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .faq-question {
