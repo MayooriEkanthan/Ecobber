@@ -45,9 +45,10 @@
 
         .industry-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
             gap: 20px;
         }
+
 
         .industry-card {
             border: 2px solid #eee;
@@ -242,6 +243,16 @@
 
             if (product.includes("Tiles") || product.includes("Flooring") || product.includes("Mats")) {
                 html = `
+                    <div class="industry-card" onclick="selectField('Manufacturing')">
+                        <span class="ind-icon">🏭</span>
+                        <h3>Manufacturing</h3>
+                        <p>Industrial processing & production</p>
+                    </div>
+                    <div class="industry-card" onclick="selectField('Education & Institutions')">
+                        <span class="ind-icon">🏫</span>
+                        <h3>Education</h3>
+                        <p>Schools & universities</p>
+                    </div>
                     <div class="industry-card" onclick="selectField('Sports & Fitness')">
                         <span class="ind-icon">🏋️</span>
                         <h3>Sports & Gyms</h3>
@@ -254,18 +265,34 @@
                     </div>`;
             } else if (product.includes("Crumbs") || product.includes("Granules") || product.includes("Crumb")) {
                 html = `
+                    <div class="industry-card" onclick="selectField('Manufacturing')">
+                        <span class="ind-icon">⚙️</span>
+                        <h3>Manufacturing</h3>
+                        <p>Molded parts & Raw goods</p>
+                    </div>
                     <div class="industry-card" onclick="selectField('Athletics')">
                         <span class="ind-icon">🏃</span>
                         <h3>Athletics</h3>
                         <p>Running tracks & Turf</p>
                     </div>
-                    <div class="industry-card" onclick="selectField('Manufacturing')">
-                        <span class="ind-icon">⚙️</span>
-                        <h3>Manufacturing</h3>
-                        <p>Molded parts & Raw goods</p>
-                    </div>`;
+                     <div class="industry-card" onclick="selectField('Landscaping & Parks')">
+                        <span class="ind-icon">🌳</span>
+                        <h3>Landscaping</h3>
+                        <p>Parks & outdoor surfaces</p>
+                    </div>
+                    <div class="industry-card" onclick="selectField('Road & Asphalt Modification')">
+                        <span class="ind-icon">🛣️</span>
+                        <h3>Road & Asphalt</h3>
+                        <p>Rubberized asphalt</p>
+                    </div>
+                    `;
             } else if (product.includes("Fuel")) {
                 html = `
+                    <div class="industry-card" onclick="selectField('Manufacturing')">
+                        <span class="ind-icon">🏭</span>
+                        <h3>Manufacturing</h3>
+                        <p>Industrial fuel usage</p>
+                    </div>
                     <div class="industry-card" onclick="selectField('Energy Plant')">
                         <span class="ind-icon">⚡</span>
                         <h3>Power Plants</h3>
@@ -275,18 +302,33 @@
                         <span class="ind-icon">🏭</span>
                         <h3>Cement & Steel</h3>
                         <p>Kiln & Furnace Fuel</p>
+                    </div>
+                    <div class="industry-card" onclick="selectField('Waste-to-Energy Plants')">
+                        <span class="ind-icon">♻️</span>
+                        <h3>Waste-to-Energy</h3>
+                        <p>Alternative fuel systems</p>
                     </div>`;
             } else {
                 html = `
+                    <div class="industry-card" onclick="selectField('Manufacturing')">
+                        <span class="ind-icon">🏭</span>
+                        <h3>Manufacturing</h3>
+                        <p>Reprocessing & compounding</p>
+                    </div>
                     <div class="industry-card" onclick="selectField('Automotive')">
                         <span class="ind-icon">🚗</span>
                         <h3>Automotive</h3>
                         <p>Tires, Gaskets & Seals</p>
                     </div>
-                    <div class="industry-card" onclick="selectField('General Industrial')">
-                        <span class="ind-icon">🏭</span>
-                        <h3>Manufacturing</h3>
-                        <p>Technical Rubber Parts</p>
+                    <div class="industry-card" onclick="selectField('Electrical & Insulation')">
+                        <span class="ind-icon">🔌</span>
+                        <h3>Electrical</h3>
+                        <p>Insulation materials</p>
+                    </div>
+                    <div class="industry-card" onclick="selectField('Marine & Docking')">
+                        <span class="ind-icon">⚓</span>
+                        <h3>Marine</h3>
+                        <p>Dock fenders & buffers</p>
                     </div>`;
             }
             grid.innerHTML = html;
@@ -332,6 +374,13 @@
             } else if (product.includes("Fuel")) {
                 html = `
                     <div class="form-group">
+                        <label class="form-label">Target Mooney Viscosity / Tensile Strength</label>
+                        <input type="text" id="tech-input" placeholder="e.g. 50 ML 1+4 / 15 MPa" class="form-input">
+                    </div>`;
+                    
+            } else {
+                html = `
+                    <div class="form-group">
                         <label class="form-label">Required Chip Size</label>
                         <select id="fuel-select" class="form-input">
                             <option>Whole Tire</option>
@@ -343,12 +392,7 @@
                         <label class="form-label">Monthly Demand (Tons)</label>
                         <input type="number" id="demand-input" placeholder="e.g. 50" class="form-input">
                     </div>`;
-            } else {
-                html = `
-                    <div class="form-group">
-                        <label class="form-label">Target Mooney Viscosity / Tensile Strength</label>
-                        <input type="text" id="tech-input" placeholder="e.g. 50 ML 1+4 / 15 MPa" class="form-input">
-                    </div>`;
+                    
             }
             specContainer.innerHTML = html;
         }
